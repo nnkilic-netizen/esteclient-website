@@ -18,7 +18,7 @@ export default function DemoLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className={\\ \ font-sans\}>
+    <div className={`${outfit.variable} ${inter.variable} font-sans`}>
       {children}
     </div>
   )
