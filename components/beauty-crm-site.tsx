@@ -383,11 +383,8 @@ export function BeautyCrmSite() {
               {language === 'tr' ? 'Lütfen Demoyu Bilgisayarınızda deneyin. Mobil uyumu düzgün çalışmayabilir.' : 'Please try the demo on your computer. Mobile compatibility may not work properly.'}
             </p>
             <div className="mt-6 flex flex-col gap-3">
-              <a href="/demo" target="_blank" rel="noopener noreferrer" onClick={() => setMobileWarningOpen(false)} className="w-full block rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground text-center transition-transform hover:-translate-y-0.5">
-                {language === 'tr' ? 'Yine de Devam Et' : 'Continue Anyway'}
-              </a>
-              <button onClick={() => setMobileWarningOpen(false)} className="w-full rounded-full border border-border px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary">
-                {language === 'tr' ? 'Vazgeç' : 'Cancel'}
+              <button onClick={() => setMobileWarningOpen(false)} className="w-full block rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground text-center transition-transform hover:-translate-y-0.5">
+                {language === 'tr' ? 'Anladım' : 'I Understand'}
               </button>
             </div>
           </div>
