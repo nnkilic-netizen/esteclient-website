@@ -46,12 +46,18 @@ const featuresTr = [
 ]
 
 
+
+
+
 const featuresFr = [
-  { title: 'Gestion de la Caisse & des Ventes', desc: 'Prenez les paiements, divisez les factures et gérez les comptes courants.', icon: Wallet },
-  { title: 'Gestion de l\'Équipe', desc: 'Suivez les primes, les jours de congé et les horaires de votre équipe.', icon: Users },
-  { title: 'Rendez-vous Rapides', desc: 'Planifiez un rendez-vous avec un client en 2 clics.', icon: Zap },
-  { title: 'Campagnes SMS', desc: 'Envoyez des messages automatiques d\'anniversaire et de rappel.', icon: MessageCircle },
-  { title: 'Reporting Avancé', desc: 'Analysez les revenus, les dépenses et les rapports de personnel.', icon: Palette },
+  { icon: ShieldCheck, title: 'Module d\'Autorisation Avancé', text: 'Gardez vos rapports financiers confidentiels. Assurez la sécurité des données de votre salon en restreignant l\'accès au personnel.' },
+  { icon: Users, title: 'Suivi Client Complet', text: 'Tout l\'historique client sur un seul écran ! Visualisez les forfaits achetés, les séances restantes, les versements et les infos personnelles en quelques secondes.' },
+  { icon: CalendarDays, title: 'Module de Rendez-vous Intelligent', text: 'Éliminez les chevauchements grâce aux vues calendrier journalières et hebdomadaires. Planifiez le trafic de votre salon parfaitement et sans effort.' },
+  { icon: Wallet, title: 'Module de Pré-comptabilité Pratique', text: 'Gérez les revenus, les dépenses, les versements et les ventes de services en un clic. Gardez toujours le contrôle de vos finances avec un filtrage détaillé.' },
+  { icon: BarChart3, title: 'Module de Reporting Étendu', text: 'Passez votre entreprise au rayon X ! Gardez votre salon sous contrôle 24/7 avec près de 20 rapports différents (performances du personnel, analyse des ventes, etc.).' },
+  { icon: Bell, title: 'Module de Rappel Assistant', text: 'Ne gardez plus les tâches futures et les anniversaires clients en tête. Votre logiciel agira comme votre assistant personnel pour vous les rappeler.' },
+  { icon: Smartphone, title: 'Module SMS Intégré', text: 'Évitez les annulations en rappelant les rendez-vous par des messages automatiques. Maximisez la fidélité avec des SMS pour les occasions spéciales.' },
+  { icon: Palette, title: 'Module de Thèmes Variés', text: 'Personnalisez librement votre écran avec 6 options de thèmes différents ! Qu\'il s\'agisse d\'un Thème Sombre pour reposer vos yeux ou de designs colorés... Vous gardez le contrôle !' },
 ]
 
 const featuresEn = [
@@ -129,10 +135,37 @@ const plansTr = [
 ]
 
 
+
+
+
 const plansFr = [
-  { name: 'Forfait de Base', text: 'Pour les petits salons.', price: '500', items: ['Agenda', 'SMS', 'Rapport de Base'] },
-  { name: 'Forfait Pro', text: 'Pour les salons en croissance.', price: '1000', items: ['Tout dans le Base', 'Rapports Avancés', 'Gestion de l\'Équipe'], featured: true },
-  { name: 'Forfait Premium', text: 'Pour les grands salons.', price: '1500', items: ['Tout dans le Pro', 'Intégration API', 'Support 24/7'] }
+  { 
+    name: 'Forfait Bureau Local', 
+    price: '40.000', 
+    period: ' / une fois',
+    text: '', 
+    items: [
+      'Tous les modules sauf SMS (Autorisation, Suivi Client, Rendez-vous Intelligent, Pré-comptabilité, Reporting, Rappel Assistant)',
+      'Droits d\'utilisation à vie',
+      'Pas d\'internet requis', 
+      'Les données du système sont hébergées sur votre propre ordinateur.', 
+      'Sécurité locale complète'
+    ] 
+  },
+  { 
+    name: 'Forfait Cloud Web/Mobile', 
+    price: '2.950', 
+    period: ' / mois',
+    text: '', 
+    featured: true,
+    items: [
+      'Tous les modules locaux + Accès Mobile + Module SMS',
+      'Accès instantané depuis n\'importe quel appareil (Web, Tablette, Téléphone) de n\'importe où',
+      'Sauvegardes automatiques sur le cloud, zéro perte de données', 
+      'Rappels automatiques par SMS', 
+      'Mises à jour gratuites instantanées et support technique prioritaire'
+    ] 
+  }
 ]
 
 const plansEn = [
@@ -273,14 +306,14 @@ export function BeautyCrmSite() {
             <a href="#iletisim" className="transition-colors hover:text-foreground">{language === 'tr' ? 'Bize ulaşın' : language === 'en' ? 'Contact Us' : 'Contactez-nous'}</a>
           </div>
           <div className="hidden items-center gap-3 md:flex">
-            <div className="flex items-center gap-1 rounded-full border border-border/80 bg-card p-1 text-xs font-semibold" aria-label="Dil seçimi">
+            <div className="flex items-center gap-1 rounded-full border border-border/80 bg-card p-1 text-xs font-semibold" aria-label={language === 'tr' ? 'Dil seçimi' : language === 'en' ? 'Language selection' : 'Sélection de la langue'}>
               <button type="button" onClick={() => setLanguage('tr')} className={`rounded-full px-2 py-1 transition-colors ${language === 'tr' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`} aria-pressed={language === 'tr'}>TR</button>
               <button type="button" onClick={() => setLanguage('en')} className={`rounded-full px-2 py-1 transition-colors ${language === 'en' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`} aria-pressed={language === 'en'}>EN</button>
               <button type="button" onClick={() => setLanguage('fr')} className={`rounded-full px-2 py-1 transition-colors ${language === 'fr' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`} aria-pressed={language === 'fr'}>FR</button>
             </div>
             <a href="/demo" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5" onClick={handleDemoClick}>{language === 'tr' ? 'Ücretsiz Deneyin (Demo Sürümü)' : language === 'en' ? 'Try for free (Demo)' : 'Essai gratuit (Démo)'} <ArrowRight className="ml-1 inline size-4" /></a>
           </div>
-          <button className="rounded-lg p-2 md:hidden" aria-label={menuOpen ? 'Menüyü kapat' : 'Menüyü aç'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+          <button className="rounded-lg p-2 md:hidden" aria-label={menuOpen ? (language === 'tr' ? 'Menüyü kapat' : language === 'en' ? 'Close menu' : 'Fermer le menu') : (language === 'tr' ? 'Menüyü aç' : language === 'en' ? 'Open menu' : 'Ouvrir le menu')} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
         {menuOpen && <div className="flex flex-col gap-4 border-t border-border/70 px-5 py-5 text-sm md:hidden"><div className="flex items-center gap-2"><span className="text-muted-foreground">Dil:</span><button type="button" onClick={() => setLanguage('tr')} className={`rounded-full px-3 py-1 ${language === 'tr' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`} aria-pressed={language === 'tr'}>Türkçe</button><button type="button" onClick={() => setLanguage('en')} className={`rounded-full px-3 py-1 ${language === 'en' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`} aria-pressed={language === 'en'}>English</button><button type="button" onClick={() => setLanguage('fr')} className={`rounded-full px-3 py-1 ${language === 'fr' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`} aria-pressed={language === 'fr'}>Français</button></div><a href="#ozellikler" onClick={() => setMenuOpen(false)}>{language === 'tr' ? 'Özellikler' : language === 'en' ? 'Features' : 'Fonctionnalités'}</a><a href="#paketler" onClick={() => setMenuOpen(false)}>{language === 'tr' ? 'Paketler' : language === 'en' ? 'Pricing' : 'Tarifs'}</a><button className="text-left" onClick={() => { setGalleryOpen(true); setMenuOpen(false); }}>{language === 'tr' ? 'Ekran Görüntüleri' : language === 'en' ? 'Screenshots' : 'Captures d\'écran'}</button><a href="#isletmeler" onClick={() => setMenuOpen(false)}>{language === 'tr' ? 'Sektörler' : language === 'en' ? 'Industries' : 'Secteurs'}</a><a href="#sss" onClick={() => setMenuOpen(false)}>{language === 'tr' ? 'SSS' : language === 'en' ? 'FAQ' : 'FAQ'}</a><a href="#iletisim" onClick={() => setMenuOpen(false)}>{language === 'tr' ? 'Bize ulaşın' : language === 'en' ? 'Contact Us' : 'Contactez-nous'}</a><a href="/demo" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary px-4 py-3 text-center text-primary-foreground" onClick={(e) => { setMenuOpen(false); handleDemoClick(e); }}>{language === 'tr' ? 'Ücretsiz Deneyin (Demo Sürümü)' : language === 'en' ? 'Try for free (Demo)' : 'Essai gratuit (Démo)'}</a></div>}
       </nav>
@@ -356,7 +389,7 @@ export function BeautyCrmSite() {
 
       {galleryOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-in fade-in duration-200">
-          <button onClick={() => setGalleryOpen(false)} className="absolute top-5 right-5 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors" aria-label="Kapat"><X className="size-6" /></button>
+          <button onClick={() => setGalleryOpen(false)} className="absolute top-5 right-5 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 transition-colors" aria-label={language === 'tr' ? 'Kapat' : language === 'en' ? 'Close' : 'Fermer'}><X className="size-6" /></button>
           <div id="gallery-slider" className="w-full h-full flex snap-x snap-mandatory overflow-x-auto items-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {Array.from({ length: 18 }, (_, i) => i + 1).map((num, i) => {
               const seoAlts = [
@@ -381,7 +414,7 @@ export function BeautyCrmSite() {
               ];
               return (
               <div key={num} className="w-screen h-[100dvh] shrink-0 snap-center flex items-center justify-center p-4 sm:p-12">
-                <img src={`/ss${num}.png`} alt={seoAlts[i] || 'Müşteri takip programı'} className="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
+                <img src={`/ss${num}.png`} alt={(language === 'tr' ? seoAltsTr[i] : language === 'en' ? seoAltsEn[i] : seoAltsFr[i]) || 'Müşteri takip programı'} className="max-w-full max-h-full object-contain rounded-xl shadow-2xl" />
               </div>
             )})}
           </div>
@@ -393,7 +426,7 @@ export function BeautyCrmSite() {
             <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-yellow-100 text-yellow-600 mb-4">
               <Smartphone className="size-6" />
             </div>
-            <h3 className="text-lg font-bold">Mobil Uyumluluk Uyarısı</h3>
+            <h3 className="text-lg font-bold">{language === 'tr' ? 'Mobil Uyumluluk Uyarısı' : language === 'en' ? 'Mobile Compatibility Warning' : 'Avertissement de Compatibilité Mobile'}</h3>
             <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
               {language === 'tr' ? 'Lütfen Demoyu Bilgisayarınızda deneyin. Mobil uyumu düzgün çalışmayabilir.' : language === 'en' ? 'Please try the demo on your computer. Mobile compatibility may not work properly.' : 'Veuillez essayer la démo sur votre ordinateur. La compatibilité mobile peut ne pas fonctionner correctement.'}
             </p>
@@ -410,5 +443,5 @@ export function BeautyCrmSite() {
 }
 
 export function PackagePage() {
-  return <main className="min-h-screen bg-background text-foreground"><div className="mx-auto max-w-5xl px-5 py-12 lg:px-8"><Link href="/" className="text-sm font-semibold text-primary">← Ana sayfaya dön</Link><div className="mt-16 max-w-2xl"><p className="text-sm font-semibold text-primary">EsteClient paketleri</p><h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Salonunuz büyüdükçe, EsteClient yanınızda.</h1><p className="mt-5 text-lg leading-7 text-muted-foreground">Şeffaf fiyatlandırma, gizli ücret yok. İhtiyacınıza uygun paketi seçin.</p></div><div className="mt-12 grid gap-5 lg:grid-cols-3">{plansTr.map((plan) => <article key={plan.name} className={`rounded-3xl border p-6 ${plan.featured ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card'}`}><h2 className="text-xl font-semibold">{plan.name}</h2><p className={`mt-2 text-sm ${plan.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{plan.text}</p><p className="mt-8 text-4xl font-semibold">₺{plan.price}<span className="text-sm font-normal opacity-70"> / ay</span></p><ul className="mt-8 flex flex-col gap-4 text-sm">{plan.items.map((item) => <li key={item}><Check className="mr-2 inline size-4 text-primary" />{item}</li>)}</ul><Link href="/#iletisim" className={`mt-8 block rounded-full px-4 py-3 text-center text-sm font-semibold ${plan.featured ? 'bg-primary-foreground text-primary' : 'border border-border'}`}>İletişime geçin</Link></article>)}</div><div className="mt-16 grid gap-4 rounded-3xl bg-accent p-6 sm:grid-cols-3"><div><ShieldCheck className="size-5 text-primary" /><p className="mt-3 font-semibold">Güvenli altyapı</p><p className="mt-1 text-sm text-muted-foreground">Verileriniz güvende.</p></div><div><Zap className="size-5 text-primary" /><p className="mt-3 font-semibold">Hızlı başlangıç</p><p className="mt-1 text-sm text-muted-foreground">Dakikalar içinde hazır.</p></div><div><HeartHandshake className="size-5 text-primary" /><p className="mt-3 font-semibold">İnsan desteği</p><p className="mt-1 text-sm text-muted-foreground">İhtiyacınız olduğunda buradayız.</p></div></div></div></main>
+  return <main className="min-h-screen bg-background text-foreground"><div className="mx-auto max-w-5xl px-5 py-12 lg:px-8"><Link href="/" className="text-sm font-semibold text-primary">← Ana sayfaya dön</Link><div className="mt-16 max-w-2xl"><p className="text-sm font-semibold text-primary">EsteClient paketleri</p><h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Salonunuz büyüdükçe, EsteClient yanınızda.</h1><p className="mt-5 text-lg leading-7 text-muted-foreground">Şeffaf fiyatlandırma, gizli ücret yok. İhtiyacınıza uygun paketi seçin.</p></div><div className="mt-12 grid gap-5 lg:grid-cols-3">{plansTr.map((plan) => <article key={plan.name} className={`rounded-3xl border p-6 ${plan.featured ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card'}`}><h2 className="text-xl font-semibold">{plan.name}</h2><p className={`mt-2 text-sm ${plan.featured ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{plan.text}</p><p className="mt-8 text-4xl font-semibold">₺{plan.price}<span className="text-sm font-normal opacity-70">{plan.period}</span></p><ul className="mt-8 flex flex-col gap-4 text-sm">{plan.items.map((item) => <li key={item}><Check className="mr-2 inline size-4 text-primary" />{item}</li>)}</ul><Link href="/#iletisim" className={`mt-8 block rounded-full px-4 py-3 text-center text-sm font-semibold ${plan.featured ? 'bg-primary-foreground text-primary' : 'border border-border'}`}>İletişime geçin</Link></article>)}</div><div className="mt-16 grid gap-4 rounded-3xl bg-accent p-6 sm:grid-cols-3"><div><ShieldCheck className="size-5 text-primary" /><p className="mt-3 font-semibold">Güvenli altyapı</p><p className="mt-1 text-sm text-muted-foreground">Verileriniz güvende.</p></div><div><Zap className="size-5 text-primary" /><p className="mt-3 font-semibold">Hızlı başlangıç</p><p className="mt-1 text-sm text-muted-foreground">Dakikalar içinde hazır.</p></div><div><HeartHandshake className="size-5 text-primary" /><p className="mt-3 font-semibold">İnsan desteği</p><p className="mt-1 text-sm text-muted-foreground">İhtiyacınız olduğunda buradayız.</p></div></div></div></main>
 }
