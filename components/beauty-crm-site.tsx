@@ -95,8 +95,6 @@ const plansTr = [
     name: 'Bulut Tabanlı Tek Şube Paketi', 
     price: '2.000', 
     period: ' / ay',
-    altPrice: '18.000',
-    altPeriod: ' / yıl peşin',
     text: '', 
     items: [
       'SMS hariç tüm modüller (Gelişmiş Yetkilendirme, Kapsamlı Müşteri Takip, Akıllı Randevu, Pratik Ön Muhasebe, Geniş Raporlama, Asistan Hatırlatma)',
@@ -116,8 +114,6 @@ const plansTr = [
     name: 'Bulut Tabanlı Çoklu Şube Paketi', 
     price: '2.500', 
     period: ' / ay',
-    altPrice: '25.000',
-    altPeriod: ' / yıl peşin',
     text: '', 
     items: [
       'SMS hariç tüm modüller (Gelişmiş Yetkilendirme, Kapsamlı Müşteri Takip, Akıllı Randevu, Pratik Ön Muhasebe, Geniş Raporlama, Asistan Hatırlatma)',
@@ -162,8 +158,6 @@ const plansFr = [
     name: 'Forfait Cloud Branche Unique', 
     price: '2.000', 
     period: ' / mois',
-    altPrice: '18.000',
-    altPeriod: ' / an d\'avance',
     text: '', 
     items: [
       'Tous les modules sauf SMS (Autorisation, Suivi Client, Rendez-vous Intelligent, Pré-comptabilité, Reporting, Rappel Assistant)',
@@ -183,8 +177,6 @@ const plansFr = [
     name: 'Forfait Cloud Multi-Succursales', 
     price: '2.500', 
     period: ' / mois',
-    altPrice: '25.000',
-    altPeriod: ' / an d\'avance',
     text: '', 
     items: [
       'Tous les modules sauf SMS (Autorisation, Suivi Client, Rendez-vous Intelligent, Pré-comptabilité, Reporting, Rappel Assistant)',
@@ -225,8 +217,6 @@ const plansEn = [
     name: 'Cloud-Based Single Branch Package', 
     price: '2.000', 
     period: ' / month',
-    altPrice: '18.000',
-    altPeriod: ' / year upfront',
     text: '', 
     items: [
       'All modules except SMS (Authorization, Customer Tracking, Smart Appointment, Pre-Accounting, Reporting, Assistant Reminder)',
@@ -246,8 +236,6 @@ const plansEn = [
     name: 'Cloud-Based Multi-Branch Package', 
     price: '2.500', 
     period: ' / month',
-    altPrice: '25.000',
-    altPeriod: ' / year upfront',
     text: '', 
     items: [
       'All modules except SMS (Authorization, Customer Tracking, Smart Appointment, Pre-Accounting, Reporting, Assistant Reminder)',
