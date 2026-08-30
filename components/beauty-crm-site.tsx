@@ -32,6 +32,7 @@ import {
   Activity,
   Dumbbell,
   PhoneCall,
+  Package,
 } from 'lucide-react'
 
 const featuresTr = [
@@ -40,6 +41,7 @@ const featuresTr = [
   { icon: CalendarDays, title: 'Akıllı Randevu Modülü', text: 'Günlük ve haftalık takvim görünümleriyle çakışmalara son verin. Salonunuzun trafiğini eksiksiz, zahmetsiz ve hatasız planlayın.' },
   { icon: Wallet, title: 'Pratik Ön Muhasebe Modülü', text: 'Gelir, gider, taksit ve hizmet satışlarınızı tek tıkla yönetin. Detaylı filtrelemeler sayesinde kasanızın ve borç-alacak durumunuzun kontrolü her an elinizde olsun.' },
   { icon: BarChart3, title: 'Geniş Raporlama Modülü', text: 'İşletmenizin röntgenini çekin! Personel performansı, satış analizleri ve gelir-gider tabloları dahil 20’ye yakın farklı rapor çeşidiyle salonunuzun gidişatını her an kontrol altında tutun.' },
+    { icon: Package, title: 'Ürün ve Stok Kontrol Modülü', text: 'Satışını yaptığınız veya salonda kullandığınız ürünlerin stoklarını anlık olarak takip edin. Kritik seviyeye düşen ürünler için uyarılar alarak tedarik sürecinizi kusursuz yönetin.' },
   { icon: Bell, title: 'Asistan Hatırlatma Modülü', text: 'İleri tarihli işlerinizi ve müşteri doğum günlerini aklınızda tutmayın. Zamanı geldiğinde programınız size özel asistanınız gibi haber versin.' },
   { icon: Smartphone, title: 'Entegre SMS Modülü', text: 'Otomatik mesajlarla randevuları hatırlatıp iptalleri önleyin. Doğum günleri ve özel günlerde atacağınız SMS\'lerle müşteri sadakatini zirveye taşıyın.' },
   { icon: Palette, title: 'Çeşitli Tema Modülü', text: 'Yazılımımızda yer alan 6 farklı tema seçeneği ile ekranınızı özgürce kişiselleştirin! İster yoğun günlerde gözlerinizi dinlendiren Koyu Tema, ister salonunuza ferahlık katan renkli tasarımlar... Kontrol de tarz da tamamen sizde!' },
@@ -55,6 +57,7 @@ const featuresFr = [
   { icon: CalendarDays, title: 'Module de Rendez-vous Intelligent', text: 'Éliminez les chevauchements grâce aux vues calendrier journalières et hebdomadaires. Planifiez le trafic de votre salon parfaitement et sans effort.' },
   { icon: Wallet, title: 'Module de Pré-comptabilité Pratique', text: 'Gérez les revenus, les dépenses, les versements et les ventes de services en un clic. Gardez toujours le contrôle de vos finances avec un filtrage détaillé.' },
   { icon: BarChart3, title: 'Module de Reporting Étendu', text: 'Passez votre entreprise au rayon X ! Gardez votre salon sous contrôle 24/7 avec près de 20 rapports différents (performances du personnel, analyse des ventes, etc.).' },
+    { icon: Package, title: 'Module de Contrôle des Stocks', text: 'Suivez instantanément les stocks des produits que vous vendez ou utilisez. Gérez votre approvisionnement sans faille en recevant des alertes pour les produits en rupture.' },
   { icon: Bell, title: 'Module de Rappel Assistant', text: 'Ne gardez plus les tâches futures et les anniversaires clients en tête. Votre logiciel agira comme votre assistant personnel pour vous les rappeler.' },
   { icon: Smartphone, title: 'Module SMS Intégré', text: 'Évitez les annulations en rappelant les rendez-vous par des messages automatiques. Maximisez la fidélité avec des SMS pour les occasions spéciales.' },
   { icon: Palette, title: 'Module de Thèmes Variés', text: 'Personnalisez librement votre écran avec 6 options de thèmes différents ! Qu\'il s\'agisse d\'un Thème Sombre pour reposer vos yeux ou de designs colorés... Vous gardez le contrôle !' },
