@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'EsteClient | Güzellik Salonu ve Müşteri Takip Programı',
+  title: 'EsteClient | Güzellik Salonu Müşteri Takip Programı',
   description: 'EsteClient ile güzellik salonunuzun randevu, müşteri ve ekip yönetimini tek yerden kolayca yönetin.',
   keywords: ['güzellik salonu programı', 'müşteri takip programı', 'randevu sistemi', 'salon yönetimi'],
   generator: 'EsteClient',
